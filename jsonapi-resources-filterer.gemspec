@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["G5", "Ramon Tayag"]
   spec.email         = ["lateam@getg5.com", "ramon.tayag@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Filterer integration with jsonapi-resources}
+  spec.description   = %q{Integration between filterer and jsonapi-resources}
+  spec.homepage      = "https://github.com/g5/jsonapi-resources-filterer"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
