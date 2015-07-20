@@ -5,9 +5,9 @@ require 'jsonapi/resources/filterer/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "jsonapi-resources-filterer"
-  spec.version       = Jsonapi::Resources::Filterer::VERSION
-  spec.authors       = ["G5", "Ramon Tayag"]
-  spec.email         = ["lateam@getg5.com", "ramon.tayag@gmail.com"]
+  spec.version       = JSONAPI::Resources::Filterer::VERSION
+  spec.authors       = ["G5", "Ramon Tayag", "Marc Ignacio"]
+  spec.email         = ["lateam@getg5.com", "ramon.tayag@gmail.com", "marcrendlignacio@gmail.com"]
 
   spec.summary       = %q{Filterer integration with jsonapi-resources}
   spec.description   = %q{Integration between filterer and jsonapi-resources}
@@ -34,4 +34,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "activerecord", ">= 3.0"
   spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "jsonapi-resources-matchers"
+  spec.add_development_dependency "rspec"
 end
