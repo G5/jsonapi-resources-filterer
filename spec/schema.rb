@@ -6,7 +6,7 @@ ActiveRecord::Schema.define do
     t.string :author
     t.integer :pages
     t.datetime :published_at
-    t.timestamps
+    t.timestamps null: true
   end
 
 end
