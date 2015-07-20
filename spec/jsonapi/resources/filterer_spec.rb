@@ -10,7 +10,15 @@ describe JSONAPI::Resources::Filterer do
       expect(BookResource.filterer_class).to eq BookFilterer
       expect(ContactResource.filterer_class).to eq ContactFilterer
       expect(Api::V2::BookResource.filterer_class).to eq Api::V2::BookFilterer
+      expect(PersonResource.filterer_class).to be_nil
     end
+  end
+
+  describe "allowing filters", type: :resource do
+    let(:contact) { Contact.new }
+    subject(:resource) { ContactResource.new(contact) }
+    it { is_expected.to filter(:first_name) }
+    it { is_expected.to_not filter(:last_name) }
   end
 
 end

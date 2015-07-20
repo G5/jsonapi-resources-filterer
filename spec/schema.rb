@@ -9,7 +9,13 @@ ActiveRecord::Schema.define do
     t.timestamps null: true
   end
 
-  create_table :contact, force: true do |t|
+  create_table :contacts, force: true do |t|
+    t.string :first_name
+    t.string :last_name
+    t.timestamps null: true
+  end
+
+  create_table :people, force: true do |t|
     t.string :first_name
     t.string :last_name
     t.timestamps null: true
