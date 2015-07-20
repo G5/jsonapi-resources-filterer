@@ -1,5 +1,5 @@
 class BookResource < JSONAPI::Resource
-  include Jsonapi::Resources::Filterer
+  include JSONAPI::Resources::Filterer
 
   attributes(
     :title,

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Jsonapi::Resources::Filterer do
+describe JSONAPI::Resources::Filterer do
   it 'has a version number' do
-    expect(Jsonapi::Resources::Filterer::VERSION).not_to be nil
+    expect(JSONAPI::Resources::Filterer::VERSION).not_to be nil
   end
 
   describe "#filterer_class" do
@@ -20,11 +20,11 @@ describe Jsonapi::Resources::Filterer do
   describe 'including this module' do
     let(:contact_class) do
       class ContactResource < JSONAPI::Resource
-        include Jsonapi::Resources::Filterer
+        include JSONAPI::Resources::Filterer
       end
       # TODO
       # ContactResource = Class.new(JSONAPI::Resource) do
-      #   include Jsonapi::Resources::Filterer
+      #   include JSONAPI::Resources::Filterer
       # end
     end
     it 'adds the filterer_class as the _filterer' do

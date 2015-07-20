@@ -1,7 +1,7 @@
 module Api
   module V2
     class BookResource < JSONAPI::Resource
-      include Jsonapi::Resources::Filterer
+      include JSONAPI::Resources::Filterer
 
       attributes(
         :title,

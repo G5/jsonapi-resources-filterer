@@ -1,4 +1,4 @@
-# Jsonapi::Resources::Filterer
+# JSONAPI::Resources::Filterer
 
 This gem integrates [filterer gem](https://github.com/dobtco/filterer) to [jsonapi-resources gem](https://github.com/cerebris/jsonapi-resources).
 

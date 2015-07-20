@@ -3,7 +3,7 @@ require 'active_support/core_ext/class/attribute'
 require 'filterer'
 require 'jsonapi-resources'
 
-module Jsonapi
+module JSONAPI
   module Resources
     module Filterer
       extend ActiveSupport::Concern
