@@ -1,8 +1,6 @@
 # Jsonapi::Resources::Filterer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jsonapi/resources/filterer`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem integrates [filterer gem](https://github.com/dobtco/filterer) to [jsonapi-resources gem](https://github.com/cerebris/jsonapi-resources).
 
 ## Installation
 
@@ -22,7 +20,51 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`jsonapi-resources` has a [built-in filtering feature](https://github.com/cerebris/jsonapi-resources#filters), e.g.
+
+```ruby
+# app/resources/contact_resource.rb
+class ContactResource < JSONAPI::Resource
+  attributes :name_first, :name_last, :email, :twitter
+
+  filter :id
+  filters :name_first, :name_last
+end
+```
+
+... but if you want to use it together with `filterer` gem, you can do this:
+
+```ruby
+# app/resources/contact_resource.rb
+class ContactResource < JSONAPI::Resource
+  attributes :name_first, :name_last, :email, :twitter
+  include JSONAPI::Resource::Filterer
+end
+```
+
+... and it will look for `contact_filterer.rb` and apply its filters
+
+```ruby
+# app/filterers/contact_filterer.rb
+class ContactFilterer < Filterer::Base
+
+  def starting_query
+    Contact.all
+  end
+
+  def param_id(x)
+    results.where(id: x)
+  end
+
+  def param_name_first(x)
+    results.where(name_first: x)
+  end
+
+  def param_name_last(x)
+    results.where(name_last: x)
+  end
+end
+```
 
 ## Development
 
@@ -55,7 +97,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/jsonapi-resources-filterer/fork )
+1. Fork it ( https://github.com/g5/jsonapi-resources-filterer/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
