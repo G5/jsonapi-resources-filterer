@@ -66,6 +66,20 @@ class ContactFilterer < Filterer::Base
 end
 ```
 
+## Testing
+
+```sh
+# Install gems
+$ bundle install
+
+# run specs
+$ bin/rspec spec
+# or
+$ bundle exec rspec spec
+# or
+$ rspec spec # can sometimes be slow if not run in the context of Gemfile
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.

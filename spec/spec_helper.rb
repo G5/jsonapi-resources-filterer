@@ -3,8 +3,7 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'rails/all'
 require 'jsonapi/resources/filterer'
 require 'jsonapi/resources/matchers'
-# TODO find out why requiring pry is slow
-# require 'pry'
+require 'pry'
 
 SPEC_DIR = File.dirname(__FILE__)
 Dir[File.join(SPEC_DIR, "support", "**", "*.rb")].each {|f| require f}
