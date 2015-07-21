@@ -34,6 +34,14 @@ module JSONAPI
           end
         end
 
+        def apply_filter(records, filter, value, _options = {})
+          if self._filterer
+            self._filterer.chain({filter => value}, {starting_query: records})
+          else
+            super(records, filter, value, _options = {})
+          end
+        end
+
         private
 
         def filterer_class_from(module_name, class_name)

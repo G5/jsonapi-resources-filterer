@@ -22,13 +22,31 @@ describe JSONAPI::Resources::Filterer do
   end
 
   it "integrates the filterer class" do
-    book_1 = Book.create(title: "A")
-    book_2 = Book.create(title: "B")
-    book_3 = Book.create(title: "C")
+    author_1 = Person.create(first_name: "John")
+    author_2 = Person.create(first_name: "Smith")
+    book_1 = Book.create(title: "A", author: author_1)
+    book_2 = Book.create(title: "B", author: author_1)
+    book_3 = Book.create(title: "C", author: author_2)
 
     # NOTE: test .apply_filter directly until we find a way to test the resource
     results = BookResource.apply_filter(Book.all, :title, "B", {})
     expect(results).to match_array([book_2])
+
+    results = BookResource.
+      apply_filter(Book.all, :author_first_name, "Smith", {})
+    expect(results).to match_array([book_3])
+  end
+
+  describe "when no filterer class" do
+    it "falls back into the original apply_filter" do
+      expect(PersonResource.filterer_class).to be_nil
+
+      person = Person.create(first_name: "Smith")
+      Person.create(first_name: "John")
+      results = PersonResource.
+        apply_filter(Person.all, :first_name, "Smith", {})
+      expect(results).to match_array [person]
+    end
   end
 
 end

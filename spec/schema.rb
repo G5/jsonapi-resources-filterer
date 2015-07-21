@@ -3,7 +3,7 @@ ActiveRecord::Schema.define do
 
   create_table :books, force: true do |t|
     t.string :title
-    t.string :author
+    t.integer :author_id
     t.integer :pages
     t.datetime :published_at
     t.timestamps null: true

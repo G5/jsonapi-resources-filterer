@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "jsonapi-resources-matchers"
   spec.add_development_dependency "rspec"
+  spec.add_development_dependency "database_cleaner", "~> 1.4"
 end

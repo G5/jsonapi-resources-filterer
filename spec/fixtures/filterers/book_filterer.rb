@@ -4,4 +4,8 @@ class BookFilterer < Filterer::Base
     results.where(title: x)
   end
 
+  def param_author_first_name(x)
+    results.joins(:author).where(people: {first_name: x})
+  end
+
 end
