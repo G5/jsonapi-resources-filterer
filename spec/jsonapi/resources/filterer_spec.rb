@@ -29,11 +29,18 @@ describe JSONAPI::Resources::Filterer do
     book_3 = Book.create(title: "C", author: author_2)
 
     # NOTE: test .apply_filter directly until we find a way to test the resource
-    results = BookResource.apply_filter(Book.all, :title, "B", {})
+    results = BookResource.apply_filters(
+      Book.all,
+      {title: "B", author: author_1.id},
+      {}
+    )
     expect(results).to match_array([book_2])
 
-    results = BookResource.
-      apply_filter(Book.all, :author_first_name, "Smith", {})
+    results = BookResource.apply_filter(
+      Book.all,
+      {author_first_name: "Smith"},
+      {}
+    )
     expect(results).to match_array([book_3])
   end
 

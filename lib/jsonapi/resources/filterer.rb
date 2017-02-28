@@ -36,7 +36,7 @@ module JSONAPI
 
         def apply_filter(records, filter, value, _options = {})
           if self._filterer
-            self._filterer.chain({filter => value}, {starting_query: records})
+            self._filterer.filter({filter => value}, {starting_query: records})
           else
             super(records, filter, value, _options = {})
           end
