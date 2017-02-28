@@ -36,7 +36,7 @@ describe JSONAPI::Resources::Filterer do
     )
     expect(results).to match_array([book_2])
 
-    results = BookResource.apply_filter(
+    results = BookResource.apply_filters(
       Book.all,
       {author_first_name: "Smith"},
       {}
