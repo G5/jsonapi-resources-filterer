@@ -1,5 +1,7 @@
 # JSONAPI::Resources::Filterer
 
+[![Build Status](https://travis-ci.org/G5/jsonapi-resources-filterer.svg?branch=master)](https://travis-ci.org/G5/jsonapi-resources-filterer)
+
 This gem integrates [filterer gem](https://github.com/dobtco/filterer) to [jsonapi-resources gem](https://github.com/cerebris/jsonapi-resources).
 
 ## Installation
