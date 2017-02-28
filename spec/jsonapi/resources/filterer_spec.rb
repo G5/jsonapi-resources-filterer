@@ -16,7 +16,7 @@ describe JSONAPI::Resources::Filterer do
 
   describe "allowing filters", type: :resource do
     let(:contact) { Contact.new }
-    subject(:resource) { ContactResource.new(contact) }
+    subject(:resource) { ContactResource.new(contact, {}) }
     it { is_expected.to filter(:first_name) }
     it { is_expected.to_not filter(:last_name) }
   end

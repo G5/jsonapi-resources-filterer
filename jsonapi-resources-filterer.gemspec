@@ -27,8 +27,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "jsonapi-resources"
-  spec.add_dependency "filterer"
+  spec.add_dependency "jsonapi-resources", ">= 0.9.0"
+  spec.add_dependency "filterer", "~> 2.0"
 
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "activerecord", ">= 3.0"
