@@ -90,7 +90,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## MIT License
 
-Copyright 2015 G5
+Copyright 2017 G5
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
